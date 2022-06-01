@@ -40,7 +40,9 @@ const Home = () => {
             <strong className="text-secondary">{userData.balance}</strong>
           </p>
         )}
-        <Link to={`/topup}`} className="btn btn-sm btn-primary mr-1"> Topup </Link>
+        <Link to={`/topup`} className="btn btn-sm btn-primary mr-1 m-5"> Topup </Link>
+        <Link to={`/buy`} className="btn btn-sm btn-primary mr-1"> Buy check </Link>
+
       </div>
       <h1>Trade List</h1>
       <table className="table">

@@ -10,7 +10,7 @@ const initialState = {
           password: "john",
           name: "John",
           id:1,
-          balance: 20000,
+          balance: 80,
           listOrder: [],
         },
         {
@@ -18,7 +18,7 @@ const initialState = {
           password: "rose",
           name: "Rose",
           id:2,
-          balance: 40000,
+          balance: 100,
           listOrder: [],
         },
       ],
