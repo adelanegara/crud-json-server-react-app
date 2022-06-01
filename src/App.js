@@ -5,7 +5,6 @@ import './App.css';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import BuyTrade from './components/BuyTrade/BuyTrade';
 import TopUp from './components/TopUp/TopUp';
 
 
@@ -20,7 +19,6 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />  
           <Route path="/" element={<PrivateRoutes component={Home} />} />
-          <Route path="/buy" element={<PrivateRoutes component={BuyTrade} />} />
           <Route path="/topup" element={<PrivateRoutes component={TopUp} />} />
 
           </Routes>
