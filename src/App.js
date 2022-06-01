@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import './App.css';
 import Home from './Home/Home';
 import Login from './Login/Login';
+import Navbar from './Navbar/Navbar';
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
     <Router>
     <div>
-          <ToastContainer />
+      <Navbar/>       
+ <ToastContainer />
         </div>
         <Routes>
           <Route path="/login" element={<Login />} />  

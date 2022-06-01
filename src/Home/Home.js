@@ -1,38 +1,48 @@
-import React, {useEffect} from 'react'
-import Database from "../../db.json"
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
-  // const fetchData = async () => {
-  //   const users = await axios.get(
-  //     " http://localhost:3005/tradingList",
-  //   );
-  //   users.data.forEach((item) => {
-  //     const { tradingId, name, region, currency, marketCap, priceToBook, symbol } = item;
-      
-  //   });
-  // };
+  const [data, setData] = useState();
+  const fetchData = async () => {
+    const tradeList = await axios.get("http://localhost:3005/tradingList");
+    setData(tradeList.data);
+  };
 
-  // useEffect(() => {
-  //   if (trade.length === 0) {
-  //     fetchData();
-  //   }
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
-    // <div>
-
-    // </div>
-    <div><h1>Home</h1>
-    {Database && Database.map(database => {
-      return(
-        <div key={database.tradingId }> {database.name} </div>
-      )
-    })}
-
-
+    <div>
+      <h1>Trade List</h1>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Region</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Market Cap</th>
+            <th scope="col">Price to Book</th>
+            <th scope="col">Symbol</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((item, index) => (
+            <tr key={index}>
+              <th scope="row">{index + 1}</th>
+              <td>{item.name}</td>
+              <td>{item.region}</td>
+              <td>{item.currency}</td>
+              <td>{item.marketCap}</td>
+              <td>{item.priceToBook}</td>
+              <td>{item.symbol}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
