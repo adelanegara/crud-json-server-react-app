@@ -1,0 +1,59 @@
+{
+  "tradingList": [
+    {
+      "tradingId": 1,
+      "name": "Apple Inc",
+      "region": "US",
+      "currency": "USD",
+      "marketCap": 2006465249280,
+      "priceToBook": 27.81413,
+      "symbol": "AAPL"
+    },
+    {
+      "tradingId": 2,
+      "name": "Microsoft Corporation",
+      "region": "US",
+      "currency": "USD",
+      "marketCap": 1598968692736,
+      "priceToBook": 13.521694,
+      "symbol": "MSFT"
+    },
+    {
+      "tradingId": 3,
+      "name": "GOOGLE",
+      "region": "US",
+      "currency": "USD",
+      "marketCap": 23456788765,
+      "priceToBook": 30.456722,
+      "symbol": "GOOG"
+    },
+    {
+      "tradingId": 4,
+      "name": "TELSA",
+      "region": "US",
+      "currency": "USD",
+      "marketCap": 2345678097,
+      "priceToBook": 27.6722,
+      "symbol": "TSLA"
+    },
+    {
+      "tradingId": 5,
+      "name": "AMAZON",
+      "region": "US",
+      "currency": "USD",
+      "marketCap": 345678992,
+      "priceToBook": 37.23487,
+      "symbol": "AMZN"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
