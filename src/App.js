@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PrivateRoutes from "./PrivateRoutes";
 import { ToastContainer } from "react-toastify";
 import './App.css';
 import Home from './Home/Home';
@@ -16,8 +17,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/login" element={<Login />} />  
-          <Route path="/" element={<Home />} />  
-        </Routes>
+          <Route path="/" element={<PrivateRoutes component={Home} />} />        </Routes>
       </Router>
     </div>
   );
