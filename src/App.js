@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivateRoutes from "./PrivateRoutes";
 import { ToastContainer } from "react-toastify";
 import './App.css';
-import Home from './Home/Home';
-import Login from './Login/Login';
-import Navbar from './Navbar/Navbar';
-import BuyTrade from './BuyTrade/BuyTrade';
-import TopUp from './TopUp/TopUp';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import Navbar from './components/Navbar/Navbar';
+import BuyTrade from './components/BuyTrade/BuyTrade';
+import TopUp from './components/TopUp/TopUp';
 
 
 function App() {

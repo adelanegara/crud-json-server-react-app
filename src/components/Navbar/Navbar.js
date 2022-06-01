@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../Context/GlobalContext";
+import { GlobalContext } from "../../Context/GlobalContext";
 import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 
 const Navbar = () => {

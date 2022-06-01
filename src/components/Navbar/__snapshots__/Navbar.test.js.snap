@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test title ABC Bank 1`] = `
+<div
+  class="MuiTypography-root MuiTypography-h4 css-1yb0leh-MuiTypography-root"
+>
+  TRADING APP
+</div>
+`;

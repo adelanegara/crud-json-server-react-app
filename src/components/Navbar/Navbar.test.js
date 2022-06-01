@@ -15,5 +15,7 @@ test("test navbar", () => {
 test("Test title ABC Bank", () => {
   const wrapper = screen.getByText(/TRADING APP/);
   expect(wrapper).toBeInTheDocument();
+  expect(wrapper).toMatchSnapshot();
 });
+
 

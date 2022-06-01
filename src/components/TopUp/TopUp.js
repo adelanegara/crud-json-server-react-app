@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
-import { GlobalContext } from "../Context/GlobalContext";
+import { GlobalContext } from "../../Context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 
 const TopUp = () => {
