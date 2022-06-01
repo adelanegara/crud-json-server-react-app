@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }} data-testid="navbar">
-        <AppBar sx={{ bgcolor: "#7a4d4a", p: "10px" }} position="static">
+        <AppBar sx={{ bgcolor: "#0b0b45", p: "10px" }} position="static">
           <Toolbar>
             <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
               TRADING APP
