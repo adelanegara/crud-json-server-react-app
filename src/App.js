@@ -6,6 +6,7 @@ import Home from './Home/Home';
 import Login from './Login/Login';
 import Navbar from './Navbar/Navbar';
 import BuyTrade from './BuyTrade/BuyTrade';
+import TopUp from './TopUp/TopUp';
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />  
           <Route path="/" element={<PrivateRoutes component={Home} />} />
-          <Route path="/add" element={<PrivateRoutes component={BuyTrade} />} />
+          <Route path="/buy" element={<PrivateRoutes component={BuyTrade} />} />
+          <Route path="/topup" element={<PrivateRoutes component={TopUp} />} />
+
           </Routes>
 
 

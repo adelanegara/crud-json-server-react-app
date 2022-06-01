@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../Context/GlobalContext";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import { toast } from "react-toastify";
 
 const Home = () => {
@@ -38,6 +40,7 @@ const Home = () => {
             <strong className="text-secondary">{userData.balance}</strong>
           </p>
         )}
+        <Link to={`/topup}`} className="btn btn-sm btn-primary mr-1"> Topup </Link>
       </div>
       <h1>Trade List</h1>
       <table className="table">
