@@ -12,16 +12,14 @@ const initialState = {
           id:1,
           balance: 20000,
           listOrder: [],
-          listTrade: [],
         },
         {
           email: "rose@gmail.com",
           password: "rose",
           name: "Rose",
-          id:1,
+          id:2,
           balance: 40000,
           listOrder: [],
-          listTrade: [],
         },
       ],
 };

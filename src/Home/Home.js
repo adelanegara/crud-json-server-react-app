@@ -23,7 +23,7 @@ const Home = () => {
               <p className="text-lg-center">
                 Welcome{" "}
                 <strong className="text-success">{userData.name}! </strong>
-                Your Balance is {" "}
+                Your Balance is $ {" "}
                 <strong className="text-secondary">{userData.balance}</strong>
               </p>
             )}
