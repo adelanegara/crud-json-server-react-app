@@ -46,7 +46,14 @@
       "symbol": "AMZN"
     }
   ],
-  "account": []
-
-  
+  "account": [
+    {
+      "email": "benni@gmail.com",
+      "password": "$2a$10$VzofkkGTKDKcDWhZNecTTumeZyE1GHyA3kWz5dVqhSFl7/AZV/trW",
+      "name": "benni",
+      "id": 1,
+      "balance": 0,
+      "listOrder": []
+    }
+  ]
 }

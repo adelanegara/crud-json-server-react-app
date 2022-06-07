@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { GlobalContext } from "../../Context/GlobalContext";
 import bcrypt from "bcryptjs";
-
 
 import {
   Button,
@@ -16,19 +15,16 @@ import {
 } from "@mui/material";
 
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
-  const { account, onLogin, setUserData } = useContext(GlobalContext);
+  const { onLogin, setUserData } = useContext(GlobalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const theme = createTheme();
   const navigate = useNavigate();
 
-//   const salt = bcrypt.genSaltSync(10);
-// console.log(salt)
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const checkAccount = (account) => {
     const checkAccount = account.find((item) => {
       return item.email === email;
     });
@@ -48,6 +44,14 @@ const Login = () => {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .get("http://localhost:3005/account")
+      .then((response) => checkAccount(response.data))
+      .catch((error) => toast.error(error.message));
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Grid
@@ -56,8 +60,6 @@ const Login = () => {
         sx={{ height: "100vh" }}
         data-testid="login"
       >
-      
-      
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -68,7 +70,6 @@ const Login = () => {
               alignItems: "center",
             }}
           >
-        
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
@@ -102,6 +103,10 @@ const Login = () => {
                 id="password"
                 autoComplete="current-password"
               />
+                 <Link to={`/register`} className=" mr-1 m-5">
+          {" "}
+          Register{" "}
+        </Link>
 
               <Button
                 type="submit"
