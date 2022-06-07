@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import TopUp from './components/TopUp/TopUp';
+import Register from './components/Register/Register';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         </div>
         <Routes>
           <Route path="/login" element={<Login />} />  
+          <Route path="/register" element={<Register />} />  
+
           <Route path="/" element={<PrivateRoutes component={Home} />} />
           <Route path="/topup" element={<PrivateRoutes component={TopUp} />} />
 
