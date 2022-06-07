@@ -1,27 +1,29 @@
 import React, { createContext, useReducer } from "react";
 import fileReducer from "./fileReducer";
 
+import bcrypt from "bcryptjs";
+
 const initialState = {
   userData: null,
   isLogin: false,
   account: [
-        {
-          email: "john@gmail.com",
-          password: "john",
-          name: "John",
-          id:1,
-          balance: 80,
-          listOrder: [],
-        },
-        {
-          email: "rose@gmail.com",
-          password: "rose",
-          name: "Rose",
-          id:2,
-          balance: 100,
-          listOrder: [],
-        },
-      ],
+    {
+      email: "john@gmail.com",
+      password: bcrypt.hashSync("john", 10),
+      name: "John",
+      id: 1,
+      balance: 80,
+      listOrder: [],
+    },
+    {
+      email: "rose@gmail.com",
+      password: bcrypt.hashSync("rose", 10),
+      name: "Rose",
+      id: 2,
+      balance: 100,
+      listOrder: [],
+    },
+  ],
 };
 
 // Create Context

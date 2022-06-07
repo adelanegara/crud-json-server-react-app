@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../Context/GlobalContext";
+import bcrypt from "bcryptjs";
+
 
 import {
   Button,
@@ -22,18 +24,27 @@ const Login = () => {
   const theme = createTheme();
   const navigate = useNavigate();
 
+//   const salt = bcrypt.genSaltSync(10);
+// console.log(salt)
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const checkAccount = account.find((item) => {
-      return item.email === email && item.password === password;
+      return item.email === email;
     });
     if (checkAccount) {
-      setUserData(checkAccount);
-      onLogin();
-      toast.success("Login Succesfully");
-      navigate("/");
+      const checkPassword = bcrypt.compareSync(password, checkAccount.password);
+      if (checkPassword) {
+        setUserData(checkAccount);
+        console.log(checkAccount);
+        onLogin();
+        toast.success("Login Succesfully");
+        navigate("/");
+      } else {
+        toast.error("invalid password");
+      }
     } else {
-      toast.error("Invalid username or password");
+      toast.error("Account doesn't exist");
     }
   };
 
