@@ -8,17 +8,13 @@ const initialState = {
   isLogin: false,
   account: [
     {
-      email: "john@gmail.com",
-      password: bcrypt.hashSync("john", 10),
-      name: "John",
+      
       id: 1,
       balance: 80,
       listOrder: [],
     },
     {
-      email: "rose@gmail.com",
-      password: bcrypt.hashSync("rose", 10),
-      name: "Rose",
+      
       id: 2,
       balance: 100,
       listOrder: [],
