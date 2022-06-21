@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import moment from "moment";
+
 
 const style = {
   position: "absolute",
@@ -42,12 +44,14 @@ const Home = () => {
     setQuantity(1);
   };
 
+
   const onBuy = () => {
-    if (userData.balance >= totalPrice) {
+    const time = moment(new Date()).format("MMMM Do YYYY, h:mm:ss a");    if (userData.balance >= totalPrice) {
       const order = {
         ...selectedData,
         quantity,
         totalPrice,
+        time,
       };
       const newBalance = userData.balance - totalPrice;
       const checkTradingId = userData.listOrder.find((item) => {
@@ -58,7 +62,7 @@ const Home = () => {
         newListOrder = userData.listOrder.map((object) => {
           if (object.tradingId === selectedData.tradingId) {
             const newQuantity = parseInt(object.quantity) + parseInt(quantity);
-            return { ...object, quantity: newQuantity };
+            return { ...object, quantity: newQuantity, time };
           }
           return object;
         });
@@ -91,7 +95,6 @@ const Home = () => {
           {" "}
           Topup{" "}
         </Link>
-       
       </div>
       <h1>Trade List</h1>
       <table className="table">
@@ -142,6 +145,7 @@ const Home = () => {
                 <th scope="col">Market Cap</th>
                 <th scope="col">Price to Book</th>
                 <th scope="col">Symbol</th>
+                <th scope="col">Time</th>
                 <th scope="col">Quantity</th>
               </tr>
             </thead>
@@ -155,6 +159,7 @@ const Home = () => {
                   <td>{item.marketCap}</td>
                   <td>{item.priceToBook}</td>
                   <td>{item.symbol}</td>
+                  <td>{item.time}</td>
                   <td>{item.quantity}</td>
                 </tr>
               ))}
